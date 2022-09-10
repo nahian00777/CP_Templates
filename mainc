@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define print(arr, n) for(int i = 0;i < n; i++) cout << arr[i] << ' ';
+#define fastio() ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
+#define dbg(x) cout << #x << " = " << x << "\n"
+
+//typedef long long ll;
+#define int long long
+
+void gameover(int tt) {
+    
+}
+
+signed main(void)
+{
+    // #ifndef ONLINE_JUDGE
+    // freopen("Error.txt", "w", stderr);
+    // #endif
+    fastio();
+    int tt;
+    cin >> tt;
+    for(int i = 1;i <= tt; i++) {
+        gameover(i);
+    }
+    return 0; 
+}
