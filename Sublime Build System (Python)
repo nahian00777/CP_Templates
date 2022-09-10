@@ -1,0 +1,5 @@
+{
+    "shell_cmd": "python $file_name<input.txt>output.txt",
+    "selector": "source.python",
+    "working_dir": "$file_path"
+}
