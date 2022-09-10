@@ -1,20 +1,14 @@
-/* author: Nahian Chowdhury */
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long ll;
-typedef unsigned long long ull;
-typedef long double lld;
-
+#define print(arr, n) for(int i = 0;i < n; i++) cout << arr[i] << ' ';
+#define int long long
 #define fastio() ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
-#define debug(x) cerr << #x << " = " << x << "\n"
+#define dbg(x) cout << #x << " = " << x << "\n"
 
 signed main(void)
 {
-	// #ifndef ONLINE_JUDGE
-	// freopen("Error.txt", "w", stderr);
-	// #endif
 	fastio();
 	
-	
+	return 0;
 }
