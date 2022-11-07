@@ -1,0 +1,22 @@
+import sys
+input = sys.stdin.readline
+
+############ ---- Functions ---- ############
+def inp():
+    return (int(input()))
+def inp_list():
+    return (list(map(int,input().split())))
+def inp_str():
+    s = input()
+    return (list(s[:len(s) - 1]))
+def inp_multi_value():
+    return (map(int,input().split()))
+def print_str(st):
+	print(''.join(st))
+def print_list(lt):
+	print(*lt, sep = ' ')
+def print_list_byn(lt):
+	print(*lt, sep = '\n')
+
+if __name__ == '__main__':
+	pass
