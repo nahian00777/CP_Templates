@@ -1,0 +1,4 @@
+long long fact[200005];
+long long nCrMod(long long n,long long r, long long mod) {
+    return (((fact[n]*inverseMod(fact[r], mod))%mod)*inverseMod(fact[n-r], mod))%mod;
+}
