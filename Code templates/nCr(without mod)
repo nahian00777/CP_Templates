@@ -1,0 +1,8 @@
+long long nCr(long long a, long long b) {
+    long long x = max(a - b, b), ans = 1;
+    for (long long K = a, L = 1; K >= x + 1; K--, L++) {
+        ans = ans * K;
+        ans /= L;
+    }
+    return ans;
+}
