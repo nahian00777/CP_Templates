@@ -1,0 +1,23 @@
+struct nCrMod {
+    // declare a object [nCrMod nc(n, mod)] like this
+    long long N;
+    vector<long long> fact, inv;
+    nCrMod(long long n, long long mod) {
+        N = n;
+        fact.assign(n + 5, 0);
+        inv.assign(n + 5, 0);
+        fact[0] = 1;
+        for (long long i = 1; i <= N; i++) {
+            fact[i] = (fact[i - 1] * i) % mod;
+        }
+        inv[N] = inverseMod(fact[N], mod);
+        for (long long i = N - 1; i >= 0; i--) {
+            inv[i] = (inv[i + 1] * (i + 1)) % mod;
+        }
+    }
+    long long find(long long n, long long r, long long mod) {
+        if (n < r || r < 0) return 0;
+        long long temp = (inv[r] * inv[n - r]) % mod;
+        return (temp * fact[n]) % mod;
+    }
+};
