@@ -1,0 +1,50 @@
+struct nCrMod {
+    // declare a object [nCrMod nc(n, mod)] like this
+    long long N;
+    vector<long long> fact, inv;
+    long long binMul(long long a, long long b, long long m) {
+        a %= m;
+        long long res = 0LL;
+        while (b > 0) {
+            if (b & 1) {
+                res = (res + a) % m;
+            }
+            a = (a + a) % m;
+            b >>= 1;
+        }
+        return res;
+    }
+    long long binPow(long long a, long long b, long long m) {
+        a %= m;
+        long long res = 1;
+        while (b > 0) {
+            if (b & 1) {
+                res = binMul(res, a, m);
+            }
+            a = binMul(a, a, m);
+            b >>= 1;
+        }
+        return res;
+    }
+    long long inverseMod(long long n, long long mod) {
+        return binPow(n, mod - 2, mod); 
+    }
+    nCrMod(long long n, long long mod) {
+        N = n;
+        fact.assign(n + 5, 0);
+        inv.assign(n + 5, 0);
+        fact[0] = 1;
+        for (long long i = 1; i <= N; i++) {
+            fact[i] = (fact[i - 1] * i) % mod;
+        }
+        inv[N] = inverseMod(fact[N], mod);
+        for (long long i = N - 1; i >= 0; i--) {
+            inv[i] = (inv[i + 1] * (i + 1)) % mod;
+        }
+    }
+    long long find(long long n, long long r, long long mod) { //use this
+        if (n < r || r < 0) return 0;
+        long long temp = (inv[r] * inv[n - r]) % mod;
+        return (temp * fact[n]) % mod;
+    }
+};
