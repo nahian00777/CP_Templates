@@ -1,0 +1,4 @@
+long long binDiv(long long a, long long b, long long m) {
+    int invOfB = binPow(b, m - 2, m);
+    return binMul(a, invOfB, m);
+}
