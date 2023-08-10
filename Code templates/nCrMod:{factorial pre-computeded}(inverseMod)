@@ -1,5 +1,6 @@
 long long fact[200005];
 void factorial(long long n, long long mod){
+    fact[0] = 1;
     for (long long i = 1; i <= n; i++) {
         fact[i] = (fact[i - 1] * i) % mod;
     }
